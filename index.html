@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Room: A Revolução Industrial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=MedievalSharp&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .font-medieval {
+            font-family: 'MedievalSharp', cursive;
+        }
+        .fade-in {
+            animation: fadeInAnimation 0.5s ease-in forwards;
+        }
+        @keyframes fadeInAnimation {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .results-table th, .results-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #4a5568;
+            vertical-align: middle;
+        }
+        .results-table th {
+            background-color: #2d3748;
+            color: #a0aec0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .results-table tr:nth-child(even) {
+            background-color: #232c3b;
+        }
+        .admin-input {
+            background-color: #1a202c;
+            border: 1px solid #4a5568;
+            color: white;
+            border-radius: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            width: 100%;
+        }
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 50;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+
+        <!-- Seção 1: Texto de Estudo -->
+        <header class="text-center mb-12">
+            <h1 class="font-medieval text-4xl md:text-5xl text-amber-300 mb-2">A Era das Máquinas</h1>
+            <p class="text-xl text-gray-400">Uma Viagem pela Revolução Industrial</p>
+        </header>
+
+        <article id="texto-estudo" class="prose prose-invert lg:prose-xl max-w-none bg-gray-800 p-6 rounded-lg shadow-lg mb-12">
+            <h2>Material de Estudo: O Motor do Conhecimento</h2>
+            <p>Para escapar da fuligem e do barulho das primeiras fábricas, você precisa entender como o mundo foi transformado pelo vapor e pelo carvão. Leia com atenção, pois cada detalhe é uma engrenagem para sua fuga!</p>
+            
+            <h3>1. O Pioneirismo Inglês e a Acumulação Primitiva</h3>
+            <p>A Revolução Industrial começou na Inglaterra no século XVIII por uma combinação única de fatores. O país possuía grandes reservas de carvão e ferro, matérias-primas essenciais. A burguesia inglesa, fortalecida pela Revolução Gloriosa (1688), havia acumulado enormes capitais através do comércio marítimo, do tráfico de escravos e da exploração de colônias. Esse processo, chamado de acumulação primitiva de capital, financiou a construção das indústrias. Ao mesmo tempo, os <strong>Cercamentos</strong> (leis que privatizaram terras comunais) expulsaram milhões de camponeses do campo. Sem terra para cultivar, essa massa de pessoas migrou para as cidades, formando uma vasta mão de obra disponível e barata, essencial para o funcionamento das fábricas.</p>
+
+            <h3>2. Invenções que Mudaram o Mundo</h3>
+            <p>A primeira grande indústria a se mecanizar foi a têxtil. Invenções como a "Spinning Jenny" e o tear mecânico aumentaram a produção de tecidos de forma exponencial. Contudo, a invenção mais importante foi a <strong>máquina a vapor</strong>, aperfeiçoada por James Watt. Ela transformou o carvão em uma fonte de energia poderosa e confiável, que podia ser usada para mover teares, bombas d'água em minas e, mais tarde, locomotivas e navios, revolucionando os transportes, barateando custos e integrando mercados.</p>
+
+            <h3>3. As Novas Relações de Produção</h3>
+            <p>A fábrica se tornou o centro da vida econômica e social, estabelecendo novas <strong>relações de produção</strong>. De um lado, a <strong>burguesia industrial</strong>, a classe que detinha a propriedade dos meios de produção (as máquinas, as ferramentas, as fábricas). Do outro, o <strong>proletariado</strong>, a classe operária que, por não possuir nada além de sua capacidade de trabalhar, era forçada a vender sua força de trabalho em troca de um salário. O salário, no entanto, não correspondia a toda a riqueza que o trabalhador produzia. A diferença entre o valor produzido pelo operário e o salário que ele recebia era a <strong>mais-valia</strong>, a fonte de lucro do burguês e a base da exploração no sistema capitalista.</p>
+
+            <h3>4. A Vida Operária e as Primeiras Lutas</h3>
+            <p>As condições de vida do proletariado eram terríveis. Nas fábricas, as jornadas chegavam a 16 horas, os acidentes eram constantes e o trabalho infantil e feminino era amplamente utilizado, com salários ainda mais baixos. Fora das fábricas, os operários viviam em bairros superlotados, sem saneamento básico, o que facilitava a proliferação de doenças. Essa exploração brutal gerou reações. O <strong>Ludismo</strong>, no início do século XIX, foi um movimento de quebra de máquinas, vistas como a causa do desemprego e da miséria. Pouco depois, o <strong>Cartismo</strong> surgiu como um movimento mais organizado, lutando por direitos políticos para os trabalhadores, como o sufrágio universal masculino, através da "Carta do Povo". Paralelamente, os trabalhadores começaram a se organizar nos <strong>sindicatos</strong> (Trade Unions) para negociar coletivamente por melhores salários e condições.</p>
+
+            <h3>5. Ideias que Incendiaram o Mundo</h3>
+            <p>A dura realidade do capitalismo industrial inspirou novas teorias políticas e sociais que questionavam a ordem burguesa. O <strong>Socialismo Utópico</strong>, de pensadores como Robert Owen, propunha a criação de comunidades ideais e cooperativas, mas sem um plano claro para superar o capitalismo. Em oposição, o <strong>Socialismo Científico</strong>, desenvolvido por Karl Marx e Friedrich Engels, analisava o capitalismo através da luta de classes. Para eles, a história da humanidade é a história do conflito entre classes opressoras e oprimidas. Eles defendiam que o proletariado deveria se organizar para tomar o poder através de uma revolução, estabelecendo uma sociedade sem classes e sem propriedade privada. Ao mesmo tempo, o <strong>Anarquismo</strong>, com teóricos como Mikhail Bakunin, também defendia o fim do capitalismo e da propriedade privada, mas se opunha a qualquer forma de Estado, incluindo o Estado proletário proposto pelos marxistas, defendendo uma sociedade baseada na livre associação dos indivíduos.</p>
+
+            <h3>6. O Legado Ambiental da Revolução</h3>
+            <p>A Revolução Industrial foi movida pela queima massiva de <strong>combustíveis fósseis</strong>, principalmente o carvão mineral. As chaminés das fábricas e as locomotivas a vapor lançavam toneladas de fuligem e gases na atmosfera, gerando uma <strong>poluição industrial</strong> sem precedentes que cobria cidades como Londres e Manchester com uma névoa escura e tóxica. Os rios eram contaminados por dejetos industriais, matando a vida aquática e espalhando doenças. Esse modelo de produção, focado no lucro imediato e sem qualquer preocupação com a natureza, inaugurou a era da emissão de gases de efeito estufa em larga escala. Foi o ponto de partida para as <strong>mudanças climáticas</strong> que hoje ameaçam o planeta, uma herança direta de um sistema que trata os recursos naturais como infinitos e o meio ambiente como um depósito de lixo.</p>
+        </article>
+
+        <!-- Seção 2: Vocabulário -->
+        <section id="vocabulario" class="bg-gray-800 p-6 rounded-lg shadow-lg mb-12">
+            <h2 class="font-medieval text-3xl text-amber-300 mb-4">Vocabulário Essencial</h2>
+            <dl class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                <div class="p-2"><dt class="font-bold text-amber-200">Burguesia Industrial:</dt><dd>Classe social dona dos meios de produção (fábricas, máquinas, capital).</dd></div>
+                <div class="p-2"><dt class="font-bold text-amber-200">Cercamentos:</dt><dd>Processo de privatização de terras na Inglaterra, que gerou mão de obra para as cidades.</dd></div>
+                <div class="p-2"><dt class="font-bold text-amber-200">Proletariado:</dt><dd>Classe dos operários que vendem sua força de trabalho em troca de um salário.</dd></div>
+                <div class="p-2"><dt class="font-bold text-amber-200">Mais-valia:</dt><dd>Valor produzido pelo trabalhador que não é pago a ele como salário, sendo a fonte do lucro do capitalista.</dd></div>
+                <div class="p-2"><dt class="font-bold text-amber-200">Ludismo:</dt><dd>Movimento de trabalhadores que quebravam máquinas como forma de protesto.</dd></div>
+                <div class="p-2"><dt class="font-bold text-amber-200">Cartismo:</dt><dd>Movimento operário que lutava por direitos políticos, como o direito ao voto.</dd></div>
+                <div class="p-2"><dt class="font-bold text-amber-200">Sindicatos:</dt><dd>Associações de trabalhadores criadas para lutar por melhores condições de trabalho e salários.</dd></div>
+                <div class="p-2"><dt class="font-bold text-amber-200">Socialismo Científico:</dt><dd>Teoria de Marx e Engels que analisa o capitalismo através da luta de classes e propõe uma revolução proletária.</dd></div>
+                <div class="p-2"><dt class="font-bold text-amber-200">Anarquismo:</dt><dd>Teoria que defende o fim de toda forma de Estado e autoridade, buscando uma sociedade baseada na cooperação livre.</dd></div>
+                <div class="p-2"><dt class="font-bold text-amber-200">Combustíveis Fósseis:</dt><dd>Materiais como carvão, petróleo e gás natural, que, quando queimados, liberam grande quantidade de energia e gases de efeito estufa.</dd></div>
+                <div class="p-2"><dt class="font-bold text-amber-200">Mudanças Climáticas:</dt><dd>Alterações de longo prazo nos padrões de temperatura e clima, causadas principalmente pela emissão de gases de efeito estufa pela atividade humana.</dd></div>
+            </dl>
+        </section>
+
+        <!-- Seção 3: Escape Room Interativo -->
+        <div id="escape-room" class="bg-gray-800 p-6 md:p-8 rounded-lg shadow-2xl border-2 border-amber-400 min-h-[300px]">
+        </div>
+
+        <!-- Seção 4: Tabela de Resultados -->
+        <div id="resultados" class="mt-12 bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="font-medieval text-3xl text-amber-300">Resultados da Turma</h2>
+                <div id="admin-controls" class="hidden">
+                    <button id="add-manual-btn" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg text-sm mr-2">Adicionar</button>
+                    <button id="logout-btn" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg text-sm">Sair</button>
+                </div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="min-w-full results-table">
+                    <thead><tr><th>Aluno(a)</th><th>Pontuação</th><th>Data</th><th id="admin-header" class="hidden">Ações</th></tr></thead>
+                    <tbody id="results-body">
+                        <tr><td colspan="3" class="text-center text-gray-500 py-4">Carregando resultados...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-center mt-6">
+                <button id="show-login-btn" class="text-amber-300 hover:text-amber-400 text-sm">Login do Professor</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Login -->
+    <div id="login-modal" class="modal-overlay hidden">
+        <div class="bg-gray-800 p-8 rounded-lg shadow-2xl w-full max-w-sm">
+            <h3 class="font-medieval text-2xl text-amber-300 mb-4 text-center">Acesso Restrito</h3>
+            <div class="space-y-4">
+                <div>
+                    <label for="username" class="block text-sm font-medium text-gray-300">Usuário</label>
+                    <input type="text" id="username" class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-amber-500 focus:border-amber-500">
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-300">Senha</label>
+                    <input type="password" id="password" class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-amber-500 focus:border-amber-500">
+                </div>
+                <p id="login-error" class="text-red-400 text-sm h-4"></p>
+                <div class="flex gap-4">
+                    <button id="login-btn" class="w-full bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-2 px-4 rounded-lg">Entrar</button>
+                    <button id="cancel-login-btn" class="w-full bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- CONFIGURAÇÃO E DADOS ---
+        const apiKey = '$2a$10$6CtPJpqy4GU0j0jRdhjTJ.llBmCKg9UcINOVmbrOqUE740xZgleei';
+        const binId = '687cf06ad039d559a168a148';
+        const PONTOS_POR_ACERTO = 0.2;
+        const gameData = {
+            'start': {
+                title: "Escape da Fábrica!",
+                text: "Você está preso no século XIX, em meio à fumaça e ao barulho da Revolução Industrial. Para voltar ao seu tempo, você precisa dominar os conceitos que forjaram a era moderna. Use o texto de estudo para guiar suas escolhas.",
+                needsInput: true,
+                options: [ { text: "Iniciar a jornada!", next: 'q1' } ]
+            },
+            'q1': { question: "Por que a Inglaterra foi o país pioneiro da Revolução Industrial?", options: [ { text: "Por sua forte monarquia absolutista.", next: 'fail_generic', reason: 'A Inglaterra tinha uma monarquia parlamentar, que dava poder à burguesia, e não um absolutismo forte.' }, { text: "Pela abundância de carvão, ferro e capital acumulado.", next: 'q2', points: PONTOS_POR_ACERTO }, { text: "Por ter abolido as classes sociais.", next: 'fail_generic', reason: 'Pelo contrário, a Revolução Industrial fortaleceu a divisão em novas classes sociais.' } ] },
+            'q2': { question: "Qual invenção foi o verdadeiro 'motor' da Primeira Revolução Industrial, sendo aplicada em fábricas e transportes?", options: [ { text: "O telégrafo.", next: 'fail_generic', reason: 'O telégrafo revolucionou a comunicação, mas não a produção de energia para as indústrias.' }, { text: "A lâmpada elétrica.", next: 'fail_generic', reason: 'A lâmpada é uma invenção da Segunda Revolução Industrial, posterior a este período.' }, { text: "A máquina a vapor.", next: 'q3', points: PONTOS_POR_ACERTO } ] },
+            'q3': { question: "O que foi o processo de 'Cercamentos' e qual sua consequência para a industrialização?", options: [ { text: "A construção de muros nas cidades, dificultando a entrada de operários.", next: 'fail_generic', reason: 'Os cercamentos ocorreram no campo, não nas cidades, e tiveram o efeito oposto.' }, { text: "A privatização de terras comunais, gerando mão de obra barata para as cidades.", next: 'q4', points: PONTOS_POR_ACERTO }, { text: "A proteção de florestas, que limitou a extração de madeira.", next: 'fail_generic', reason: 'O foco era na produção agrícola para o mercado, não na proteção ambiental.' } ] },
+            'q4': { question: "A Revolução Industrial consolidou duas novas classes sociais principais. Quais são elas?", options: [ { text: "Nobreza e servos.", next: 'fail_generic', reason: 'Essas eram as classes principais do Feudalismo, sistema que estava sendo superado.' }, { text: "Burguesia industrial e proletariado.", next: 'q5', points: PONTOS_POR_ACERTO }, { text: "Artesãos e mercadores.", next: 'fail_generic', reason: 'Esses grupos já existiam, mas a nova ordem industrial os transformou em burguesia e proletariado.' } ] },
+            'q5': { question: "O conceito de 'mais-valia', central na crítica ao capitalismo, significa:", options: [ { text: "O valor extra pago aos trabalhadores por horas extras.", next: 'fail_generic', reason: 'A mais-valia é justamente a parte do valor que NÃO é paga ao trabalhador.' }, { text: "A diferença entre o valor produzido pelo operário e o salário que ele recebe.", next: 'q6', points: PONTOS_POR_ACERTO }, { text: "O imposto que a burguesia pagava ao Estado.", next: 'fail_generic', reason: 'A mais-valia é a fonte do lucro do burguês, não um imposto.' } ] },
+            'q6': { question: "Como eram as condições de trabalho para os operários nas primeiras fábricas?", options: [ { text: "Jornadas curtas (6h/dia), salários altos e férias remuneradas.", next: 'fail_generic', reason: 'Isso é uma conquista muito posterior. As condições iniciais eram extremamente precárias.' }, { text: "Ambiente seguro, com muitas leis de proteção ao trabalhador.", next: 'fail_generic', reason: 'A segurança e as leis trabalhistas eram praticamente inexistentes no início da industrialização.' }, { text: "Jornadas longas (até 16h/dia), baixos salários e ambientes insalubres.", next: 'q7', points: PONTOS_POR_ACERTO } ] },
+            'q7': { question: "O movimento 'Cartista' se diferenciava do 'Ludismo' porque sua principal luta era por:", options: [ { text: "A destruição das máquinas.", next: 'fail_generic', reason: 'A destruição de máquinas era a tática do Ludismo, não do Cartismo.' }, { text: "Direitos políticos, como o direito ao voto para os trabalhadores.", next: 'q8', points: PONTOS_POR_ACERTO }, { text: "A criação de fazendas coletivas no campo.", next: 'fail_generic', reason: 'O Cartismo era um movimento urbano e focado na política, não na questão agrária.' } ] },
+            'q8': { question: "Qual teoria social propunha uma revolução liderada pelo proletariado para criar uma sociedade sem classes e sem propriedade privada?", options: [ { text: "Socialismo Utópico.", next: 'fail_generic', reason: 'Os socialistas utópicos propunham comunidades ideais, mas não uma revolução proletária organizada.' }, { text: "Socialismo Científico (Marxismo).", next: 'q9', points: PONTOS_POR_ACERTO }, { text: "Anarquismo.", next: 'fail_generic', reason: 'O Anarquismo também queria uma sociedade sem classes, mas se opunha à ideia de um Estado proletário, mesmo que temporário.' } ] },
+            'q9': { question: "Qual foi o principal legado ambiental negativo da Revolução Industrial, que sentimos até hoje?", options: [ { text: "O esgotamento das minas de ferro.", next: 'fail_generic', reason: 'Embora o uso de recursos seja um problema, o impacto atmosférico foi muito mais duradouro e global.' }, { text: "O início da emissão de gases de efeito estufa em larga escala.", next: 'q10', points: PONTOS_POR_ACERTO }, { text: "A poluição sonora das fábricas.", next: 'fail_generic', reason: 'A poluição sonora era um problema local grave, mas o impacto global veio dos gases emitidos.' } ] },
+            'q10': { question: "Qual teoria social, além de criticar o capitalismo, também se opunha a qualquer forma de Estado, defendendo a livre associação entre os indivíduos?", options: [ { text: "Socialismo Científico.", next: 'fail_generic', reason: 'O Marxismo propõe a tomada do Estado pelo proletariado como uma fase de transição.' }, { text: "Ludismo.", next: 'fail_generic', reason: 'O Ludismo foi um movimento de ação direta, não uma teoria social completa sobre o Estado.' }, { text: "Anarquismo.", next: 'victory', points: PONTOS_POR_ACERTO } ] },
+            'fail_generic': { title: "Engrenagem emperrada!", isFailure: true },
+            'victory': { title: "Você escapou!", isVictory: true, options: [ { text: "Jogar Novamente", next: 'start' } ] }
+        };
+
+        let currentStepId = 'start';
+        let previousStepId = 'start';
+        let score = 0;
+        let studentName = '';
+        let isAdminLoggedIn = false;
+        let allResults = [];
+
+        const gameContainer = document.getElementById('escape-room');
+        const resultsBody = document.getElementById('results-body');
+        const loginModal = document.getElementById('login-modal');
+
+        function renderStep() {
+            const stepData = gameData[currentStepId];
+            gameContainer.innerHTML = '';
+            const contentWrapper = document.createElement('div');
+            contentWrapper.className = 'fade-in';
+            let htmlContent = `<h2 class="font-medieval text-3xl text-amber-300 mb-4 text-center">${stepData.title}</h2>`;
+            if (stepData.isVictory) {
+                const finalScore = score.toFixed(1);
+                htmlContent += `<p class="text-lg mb-6 text-center">Sua máquina do tempo está consertada! Você provou seu conhecimento.<br><br><strong class='text-2xl text-amber-300'>Sua pontuação final: ${finalScore} / 2.0</strong></p>`;
+                saveScore(studentName, finalScore);
+            } else if (stepData.isFailure) {
+                const failedOption = gameData[previousStepId].options.find(opt => opt.next === 'fail_generic');
+                const reason = failedOption ? failedOption.reason : "Tente pensar de outra forma.";
+                htmlContent += `<p class="text-lg mb-6 text-center text-red-400">${reason}</p>`;
+            } else {
+                htmlContent += `<p class="text-lg mb-6 text-center">${stepData.question || stepData.text}</p>`;
+            }
+            if (stepData.needsInput) {
+                htmlContent += `<input type="text" id="student-name" placeholder="Digite seu nome completo aqui" class="w-full md:w-3/4 bg-gray-700 border border-gray-600 rounded-lg py-2 px-3 mb-4 text-white focus:outline-none focus:ring-2 focus:ring-amber-400 block mx-auto">`;
+            }
+            let optionsHtml = '<div class="flex flex-col items-center space-y-4">';
+            if (stepData.isFailure) {
+                optionsHtml += `<button data-next="${previousStepId}" class="w-full md:w-3/4 bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-3 px-4 rounded-lg shadow-md transition-transform transform hover:scale-105">Tentar novamente</button>`;
+            } else {
+                stepData.options.forEach(option => {
+                    optionsHtml += `<button data-next="${option.next}" data-points="${option.points || 0}" class="w-full md:w-3/4 bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-3 px-4 rounded-lg shadow-md transition-transform transform hover:scale-105">${option.text}</button>`;
+                });
+            }
+            optionsHtml += '</div>';
+            contentWrapper.innerHTML = htmlContent + optionsHtml;
+            gameContainer.appendChild(contentWrapper);
+        }
+
+        async function updateJSONBin(data) {
+            try {
+                const response = await fetch(`https://api.jsonbin.io/v3/b/${binId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Master-Key': apiKey
+                    },
+                    body: JSON.stringify(data)
+                });
+                if (!response.ok) throw new Error('Falha ao atualizar o Bin.');
+                return true;
+            } catch (error) {
+                console.error("Erro ao salvar no JSONBin:", error);
+                alert("Ocorreu um erro ao salvar os dados.");
+                return false;
+            }
+        }
+
+        async function loadResultsFromJSONBin() {
+            try {
+                const response = await fetch(`https://api.jsonbin.io/v3/b/${binId}/latest`, {
+                    method: 'GET',
+                    headers: { 'X-Master-Key': apiKey }
+                });
+                if (response.status === 404) return [];
+                if (!response.ok) throw new Error(`Erro na API: ${response.statusText}`);
+                const data = await response.json();
+                allResults = data.record;
+                displayResults();
+            } catch (error) {
+                console.error("Erro ao carregar do JSONBin:", error);
+                resultsBody.innerHTML = `<tr><td colspan="4" class="text-center text-red-400 py-4">Erro ao carregar resultados.</td></tr>`;
+            }
+        }
+
+        async function saveScore(name, finalScore) {
+            const newScore = { studentName: name, score: parseFloat(finalScore), timestamp: new Date().toISOString() };
+            allResults.push(newScore);
+            const success = await updateJSONBin(allResults);
+            if (success) {
+                displayResults();
+            }
+        }
+
+        function displayResults() {
+            resultsBody.innerHTML = '';
+            if (!allResults || allResults.length === 0) {
+                resultsBody.innerHTML = `<tr><td colspan="${isAdminLoggedIn ? 4 : 3}" class="text-center text-gray-500 py-4">Nenhum resultado ainda.</td></tr>`;
+                return;
+            }
+            const sortedResults = [...allResults].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+            sortedResults.forEach(data => {
+                const date = new Date(data.timestamp);
+                const formattedDate = `${date.toLocaleDateString('pt-BR')} ${date.toLocaleTimeString('pt-BR')}`;
+                const row = document.createElement('tr');
+                row.dataset.timestamp = data.timestamp;
+                row.innerHTML = `
+                    <td data-field="studentName">${data.studentName}</td>
+                    <td data-field="score" class="text-amber-300 font-semibold">${parseFloat(data.score).toFixed(1)}</td>
+                    <td>${formattedDate}</td>
+                    ${isAdminLoggedIn ? `
+                    <td class="flex gap-2">
+                        <button class="edit-btn bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded text-xs">Editar</button>
+                        <button class="delete-btn bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded text-xs">Excluir</button>
+                    </td>` : ''}
+                `;
+                resultsBody.appendChild(row);
+            });
+        }
+
+        function handleAdminLogin() {
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            if (user === 'professor' && pass === 'j1junior') {
+                isAdminLoggedIn = true;
+                loginModal.classList.add('hidden');
+                document.getElementById('admin-controls').classList.remove('hidden');
+                document.getElementById('admin-header').classList.remove('hidden');
+                document.getElementById('show-login-btn').classList.add('hidden');
+                displayResults();
+            } else {
+                document.getElementById('login-error').textContent = 'Usuário ou senha inválidos.';
+            }
+        }
+
+        function handleAdminLogout() {
+            isAdminLoggedIn = false;
+            document.getElementById('admin-controls').classList.add('hidden');
+            document.getElementById('admin-header').classList.add('hidden');
+            document.getElementById('show-login-btn').classList.remove('hidden');
+            displayResults();
+        }
+
+        function handleEdit(row) {
+            row.querySelectorAll('[data-field]').forEach(cell => {
+                const field = cell.dataset.field;
+                const value = cell.textContent;
+                cell.innerHTML = `<input type="text" class="admin-input" value="${value}" data-original-value="${value}">`;
+            });
+            row.querySelector('.edit-btn').textContent = 'Salvar';
+            row.querySelector('.edit-btn').classList.replace('bg-blue-500', 'bg-green-500');
+            row.querySelector('.edit-btn').classList.replace('hover:bg-blue-600', 'hover:bg-green-600');
+            row.querySelector('.delete-btn').textContent = 'Cancelar';
+            row.querySelector('.delete-btn').classList.replace('bg-red-500', 'bg-gray-500');
+            row.querySelector('.delete-btn').classList.replace('hover:bg-red-600', 'hover:bg-gray-600');
+        }
+
+        async function handleSave(row) {
+            const timestamp = row.dataset.timestamp;
+            const index = allResults.findIndex(r => r.timestamp === timestamp);
+            if (index === -1) return;
+            const newName = row.querySelector('[data-field="studentName"] input').value;
+            const newScore = row.querySelector('[data-field="score"] input').value;
+            allResults[index].studentName = newName;
+            allResults[index].score = parseFloat(newScore);
+            const success = await updateJSONBin(allResults);
+            if(success) displayResults();
+        }
+        
+        function handleCancelEdit(row) {
+            displayResults();
+        }
+
+        async function handleDelete(row) {
+            if (!confirm('Tem certeza que deseja excluir este resultado?')) return;
+            const timestamp = row.dataset.timestamp;
+            allResults = allResults.filter(r => r.timestamp !== timestamp);
+            const success = await updateJSONBin(allResults);
+            if(success) displayResults();
+        }
+
+        async function handleAddManual() {
+            const name = prompt("Nome do Aluno:");
+            if (!name) return;
+            const scoreStr = prompt("Nota do Aluno (ex: 1.8):");
+            if (!scoreStr) return;
+            const score = parseFloat(scoreStr);
+            if (isNaN(score)) {
+                alert("Nota inválida.");
+                return;
+            }
+            const newScore = { studentName: name, score: score, timestamp: new Date().toISOString() };
+            allResults.push(newScore);
+            const success = await updateJSONBin(allResults);
+            if(success) displayResults();
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderStep();
+            loadResultsFromJSONBin();
+
+            gameContainer.addEventListener('click', function(e) {
+                if (e.target.tagName !== 'BUTTON') return;
+                const nextStepId = e.target.dataset.next;
+                if (!nextStepId) return;
+                if (currentStepId === 'start') {
+                    const nameInput = document.getElementById('student-name');
+                    const name = nameInput.value.trim();
+                    if (!name) {
+                        let msg = document.getElementById('name-error-msg');
+                        if (!msg) {
+                            msg = document.createElement('p');
+                            msg.id = 'name-error-msg';
+                            msg.className = 'text-red-400 text-center mt-2 fade-in';
+                            nameInput.insertAdjacentElement('afterend', msg);
+                        }
+                        msg.textContent = 'Por favor, digite seu nome para começar!';
+                        setTimeout(() => msg.remove(), 3000);
+                        return;
+                    }
+                    studentName = name;
+                    score = 0;
+                }
+                const points = parseFloat(e.target.dataset.points || 0);
+                score += points;
+                if (nextStepId === 'fail_generic') previousStepId = currentStepId;
+                currentStepId = nextStepId;
+                renderStep();
+            });
+
+            document.getElementById('show-login-btn').addEventListener('click', () => loginModal.classList.remove('hidden'));
+            document.getElementById('cancel-login-btn').addEventListener('click', () => loginModal.classList.add('hidden'));
+            document.getElementById('login-btn').addEventListener('click', handleAdminLogin);
+            document.getElementById('logout-btn').addEventListener('click', handleAdminLogout);
+            document.getElementById('add-manual-btn').addEventListener('click', handleAddManual);
+
+            resultsBody.addEventListener('click', function(e) {
+                const row = e.target.closest('tr');
+                if (!row) return;
+                if (e.target.classList.contains('edit-btn')) {
+                    if (e.target.textContent === 'Editar') handleEdit(row);
+                    else handleSave(row);
+                } else if (e.target.classList.contains('delete-btn')) {
+                     if (e.target.textContent === 'Excluir') handleDelete(row);
+                     else handleCancelEdit(row);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
